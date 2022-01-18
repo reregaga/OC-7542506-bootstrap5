@@ -104,3 +104,119 @@ Space between cols and rows called **gutter**. Set up with classes `.g-{0-5}`. D
 [[xxxx]    [xx]  ]
 -->
 ```
+
+## Personalization
+### Fonts:
+- bold text: `fw-bold` or `fw-{breakpoint}-bold`
+- normal text: `fw-normal` or `fw-{breakpoint}-normal`
+- [etc](https://getbootstrap.com/docs/5.1/utilities/text/#font-weight-and-italics).
+
+`.{property}-{modificator}-{value}`
+
+[man page](https://getbootstrap.com/docs/5.0/utilities/text/#font-size)
+
+### Reading direction and alignment:
+`.text-start` or `text-{breakpoint}-start` for left alignment and `.text-end` for right. 
+
+[man pages](https://getbootstrap.com/docs/5.0/utilities/text/#text-alignment)
+
+### Buttons:
+Use `<button>` or `<a class="btn">`
+
+Style classes for colors and etc: `btn-primary`, etc.
+
+[man pages](https://getbootstrap.com/docs/5.0/components/buttons/)
+
+### Icons:
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+```
+```html
+<a href="#linkedin" target="_blank">
+    <i class="bi bi-linkedin"></i>
+</a>
+```
+[man pages](https://icons.getbootstrap.com/)
+
+### Navigation:
+```html
+<nav class="navbar"></nav>
+```
+
+The `.navbar-expand` class affects the width of the viewport for which the navigation bar is expanded or collapsed. You can adapt the navigation bar breakpoint with a class modifier { `-sm , -md , -lg , -xl, -xxl` } added to the `.navbar-expand` class like so: `.navbar-expand-md`.
+```html
+<nav class="navbar navbar-expand"></nav>
+```
+
+For branding use:
+```html
+<nav class="navbar navbar-expand">
+    <a class="navbar-brand" href="...">Prénom Nom</a>
+</nav>
+```
+```html
+<nav class="navbar navbar-expand">
+  <a class="navbar-brand text-uppercase fw-bold" href="index.html">
+    <span class="bg-primary bg-gradient p-1 rounded-3 text-light">John</span> Doe
+  </a>
+</nav>
+```
+![Fig 1](img/fig_1.png)
+
+Class `.fixed-top` for pin navigation to top while scrolling.
+
+#### Adaptive navigation:
+- `1.` Use class `navbar-expand-md` for `<nav>`.
+- `2.` **Add a navigation toggle button** with `.navbar-toggler` that will show or hide your website's navigation menu. For responsive navigation, insert a button immediately after the element of class `.navbar-brand` with the following attributes and content:
+```html
+<button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"    <!-- use for .collapse and .navbar-collapse bottom-->
+        data-bs-target="#navbarNav"  <!-- use as id in <div> bottom-->
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+```
+- `3.` Wrap navigation list with `<div>` and `.navbar-collapse`.
+```html
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#johndoe">Qui suis-je ?</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#expertise">Expertises</a>
+        </li>
+    </ul>
+</div>
+```
+
+[man page](https://getbootstrap.com/docs/5.1/components/navbar/#responsive-behaviors)
+
+### Progress bar:
+
+[man pages](https://getbootstrap.com/docs/5.0/components/progress/)
+
+```html
+<div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+```
+
+### Card:
+
+[man pages](https://getbootstrap.com/docs/5.0/components/card/)
+
+Card structure:
+```html
+<div class="card">
+    <img src="https://picsum.photos/300/150?random=1" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+```
