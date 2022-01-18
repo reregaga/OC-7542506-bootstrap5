@@ -197,7 +197,7 @@ Class `.fixed-top` for pin navigation to top while scrolling.
 
 ### Progress bar:
 
-[man pages](https://getbootstrap.com/docs/5.0/components/progress/)
+[man pages](https://getbootstrap.com/docs/5.1/components/progress/)
 
 ```html
 <div class="progress">
@@ -207,7 +207,7 @@ Class `.fixed-top` for pin navigation to top while scrolling.
 
 ### Card:
 
-[man pages](https://getbootstrap.com/docs/5.0/components/card/)
+[man pages](https://getbootstrap.com/docs/5.1/components/card/)
 
 Card structure:
 ```html
@@ -219,4 +219,50 @@ Card structure:
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
 </div>
+```
+
+## Add Interactive:
+
+[man page](https://getbootstrap.com/docs/5.1/components/offcanvas/)
+
+## Forms:
+[man page](https://getbootstrap.com/docs/5.1/forms/overview/)
+```html
+<form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+```
+
+## Modal
+
+[man pages](https://getbootstrap.com/docs/5.1/components/modal/)
+
+## Tooltips with `Popper.js`
+
+[man page](https://getbootstrap.com/docs/5.1/components/tooltips/#example-enable-tooltips-everywhere)
+
+```js
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+```
+The general idea of the script is to extract from the HTML page (DOM) all elements that have the `[data-bs-toggle="tooltip"]` attribute. Once these elements are received, the script will simply bind them to the rest of the JS provided by Bootstrap 5.
+```html
+<a href="#" class="text-decoration-none text-dark" data-bs-toggle="tooltip" title="LinkedIn">
+    <i class="fab fa-linkedin fa-2x"></i>
+</a>
 ```
